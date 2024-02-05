@@ -6,11 +6,12 @@
 // range, inclusively.
 
 // DO NOT FORGET THESE FUCKERS RIGHT HERE
-const totalNumberOfQuestions = 16;
+const totalNumberOfQuestions = 44;
 const reloadTime = 2000;
 let displayedQuestionNumber = 0;
 
 // FIXME:
+// - change the theme preview button to a .svg file
 // - try to find a way to properly size the images on the PROMPT container
 // - try to find a way to properly size the images (questions) on answer's div
 //         -> a good way of doing this is by setting a conditional statement where the main thing is
@@ -80,6 +81,10 @@ function blockUserClick() {
         for (let i = 0; i < 3; i++)
         answers[i].setAttribute("onclick", "checkAnswer(this.className, this.id)");
     }, reloadTime);
+}
+
+function setTheme(themeId) {
+    document.getElementById("theme").setAttribute("href", "themes/" + themeId + ".css");
 }
 
 function styleCorrect(answerId) {

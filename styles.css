@@ -9,7 +9,15 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: hsl(0, 0%, 80%);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100vw;
 }
 
 #main-container {
@@ -18,8 +26,6 @@ body {
     justify-content: space-between;
     height: 90vh;
     width: 60vw;
-    background-color: hsl(0, 0%, 90%);
-    border: 2px solid hsl(0, 0%, 70%);
     border-radius: 10px;
     padding: 10px;
 }
@@ -30,8 +36,6 @@ body {
     align-items: center;
     height: 40%;
     width: 100%;
-    background-color: white;
-    border: 2px solid hsl(0, 0%, 80%);
     border-radius: 10px;
 }
 
@@ -43,39 +47,39 @@ body {
     width: 100%;
 }
 
+#light, #dark, #night {
+    border-radius: 15px;
+    border: 1px solid hsl(0, 0%, 100%);
+    box-shadow: 0 0 0 1px hsl(0, 0%, 50%);
+}
+
+/* to prevent bugs, I will just override the whole default theme */
+
+#light {
+    background-color: hsl(0, 0%, 90%);
+}
+
+#dark {
+    background-color: hsl(220, 10%, 20%);
+}
+
+#night {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.header-button {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+}
+
 .answer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30%;
     width: 100%;
-    border: 2px solid hsl(0, 0%, 80%);
     border-radius: 10px;
-    background-color: white;
     cursor: pointer;
-}
-
-.answer:hover {
-    border: 2px solid hsl(0, 0%, 70%);
-    box-shadow: 0 0 10px hsl(0, 0%, 50%);
-}
-
-.styleCorrect {
-    border: 2px solid hsl(120, 100%, 50%);
-    box-shadow: 0 0 12px 2px hsl(120, 100%, 50%);
-}
-
-.styleCorrect:hover {
-    border: 2px solid hsl(120, 100%, 50%);
-    box-shadow: 0 0 12px 2px hsl(120, 100%, 50%);
-}
-
-.styleIncorrect {
-    border: 2px solid hsl(0, 100%, 50%);
-    box-shadow: 0 0 12px 2px hsl(0, 100%, 50%);
-}
-
-.styleIncorrect:hover {
-    border: 2px solid hsl(0, 100%, 50%);
-    box-shadow: 0 0 12px 2px hsl(0, 100%, 50%);
 }

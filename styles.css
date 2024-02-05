@@ -47,7 +47,7 @@ header {
     width: 100%;
 }
 
-#light, #dark, #night {
+#light, #dark, #gold {
     border-radius: 15px;
     border: 1px solid hsl(0, 0%, 100%);
     box-shadow: 0 0 0 1px hsl(0, 0%, 50%);
@@ -63,8 +63,8 @@ header {
     background-color: hsl(220, 10%, 20%);
 }
 
-#night {
-    background-color: hsl(0, 0%, 10%);
+#gold {
+    background-color: hsl(50, 100%, 50%);
 }
 
 .header-button {

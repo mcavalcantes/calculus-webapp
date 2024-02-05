@@ -11,14 +11,15 @@ const reloadTime = 2000;
 let displayedQuestionNumber = 0;
 
 // FIXME:
-// - change the theme preview button to a .svg file
+// - change the theme preview button to a .svg file in >that diagonal style
 // - try to find a way to properly size the images on the PROMPT container
 // - try to find a way to properly size the images (questions) on answer's div
 //         -> a good way of doing this is by setting a conditional statement where the main thing is
 //            the picture height. the point is that the questions normally are either "one-liners" or have
 //            some kind of fractions in it. so, when the image has a height less/equal to 70px, it probably
 //            is one of the "one-liner" type; otherwise, it is the fractions type (most of these have a > 80px 
-//            height).
+//            height). IMPORTANT: the images must be generated according to THESE settings:
+// --> png | Latin Modern | (12pt) Grande | 200 | Transparente | #unmarked | #unmarked <--
 // - try to find a way to set the 'totalNumberOfQuestions' variable value automatically
 
 function generate() {
@@ -39,6 +40,17 @@ function generate() {
             answers[i].setAttribute("class", "answer correct");
         } else {
             answers[i].setAttribute("class", "answer incorrect");
+        }
+
+        // thank god stackoverflow exists, fixed the sizing problem
+        let img = new Image();
+        img.src = "assets/" + questionNumber + "-" + dummyArray[i] + ".png";
+        img.onload = function() {
+            if (img.naturalHeight <= 70) {
+                answers[i].firstChild.setAttribute("height", "50%");
+            } else {
+                answers[i].firstChild.setAttribute("height", "80%");
+            }
         }
     }
 }

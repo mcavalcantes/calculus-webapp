@@ -1,5 +1,5 @@
 body {
-    background-color: hsl(0, 0%, 5%);
+    background-color: hsl(200, 20%, 5%);
 }
 
 div img {
@@ -7,23 +7,23 @@ div img {
 }
 
 #main-container {
-    background-color: hsl(0, 0%, 10%);
-    border: 2px solid hsl(0, 0%, 0%);
+    background-color: hsl(200, 10%, 10%);
+    border: 2px solid hsl(50, 100%, 20%);
 }
 
 #display {
-    background-color: hsl(0, 0%, 15%);
-    border: 2px solid hsl(0, 0%, 5%);
+    background-color: hsl(200, 0%, 10%);
+    border: 2px solid hsl(50, 100%, 50%);
 }
 
 .answer {
-    background-color:hsl(0, 0%, 15%);
-    border: 2px solid hsl(0, 0%, 5%);
+    background-color:hsl(200, 0%, 10%);
+    border: 2px solid hsl(50, 100%, 20%);
 }
 
 .answer:hover {
-    border: 2px solid hsl(0, 0%, 6%);
-    box-shadow: 0 0 10px hsl(0, 0%, 0%);
+    border: 2px solid hsl(50, 100%, 50%);
+    box-shadow: 0 0 10px hsl(40, 100%, 50%);
 }
 
 .styleCorrect {

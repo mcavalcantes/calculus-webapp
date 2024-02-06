@@ -16,7 +16,7 @@ header {
     top: 0;
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 8vh;
     width: 100vw;
 }
 
@@ -48,12 +48,10 @@ header {
 }
 
 #light, #dark, #gold {
-    border-radius: 15px;
+    border-radius: 100%;
     border: 1px solid hsl(0, 0%, 100%);
     box-shadow: 0 0 0 1px hsl(0, 0%, 50%);
 }
-
-/* to prevent bugs, I will just override the whole default theme */
 
 #light {
     background-color: hsl(0, 0%, 90%);
@@ -67,11 +65,18 @@ header {
     background-color: hsl(50, 100%, 50%);
 }
 
+#user-button {
+    background-image: url("assets/user-icon.png");
+    background-size: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
 .header-button {
     cursor: pointer;
-    height: 30px;
-    width: 30px;
-    margin-left: 15px;
+    height: 4vh;
+    width: 4vh;
+    margin-left: 2vh;
 }
 
 .answer {

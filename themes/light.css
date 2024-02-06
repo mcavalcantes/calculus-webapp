@@ -12,6 +12,10 @@ body {
     border: 2px solid hsl(0, 0%, 80%);
 }
 
+#user-button {
+    background-color: hsl(0, 0%, 95%);
+}
+
 .answer {
     background-color: white;
     border: 2px solid hsl(0, 0%, 80%);

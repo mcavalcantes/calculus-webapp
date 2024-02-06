@@ -16,6 +16,11 @@ div img {
     border: 2px solid hsl(50, 100%, 50%);
 }
 
+#user-button {
+    filter: invert(100%);
+    background-color: hsl(0, 10%, 80%);
+}
+
 .answer {
     background-color:hsl(200, 0%, 10%);
     border: 2px solid hsl(50, 100%, 20%);

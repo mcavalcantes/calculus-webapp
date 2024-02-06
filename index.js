@@ -31,6 +31,28 @@ function generate() {
     displayedQuestionNumber = questionNumber;
     document.getElementById("question").setAttribute("src", "assets/" + questionNumber + ".png");
 
+    // the implementation below is probably not the most appropriate one, but I don't know a better one atm
+    // this makes the website responsible by setting specific display widths based on a image natural width;
+    let questionImg = new Image();
+    questionImg.src = "assets/" + questionNumber + ".png";
+
+    questionImg.onload = function() {
+        let w = questionImg.naturalWidth;
+        let questionImgElement = document.getElementById("question");
+
+        if (w <= 200) {
+            questionImgElement.setAttribute("width", "30%");
+        } else if (w <= 300) {
+            questionImgElement.setAttribute("width", "40%");
+        } else if (w <= 400) {
+            questionImgElement.setAttribute("width", "50%");
+        } else if (w <= 500) {
+            questionImgElement.setAttribute("width", "60%");
+        } else {
+            questionImgElement.setAttribute("width", "70%");
+        }
+    }
+
     let dummyArray = getShuffledArray();
     const answers = document.getElementById("answer-container").children;
 
@@ -43,10 +65,10 @@ function generate() {
         }
 
         // thank god stackoverflow exists, fixed the sizing problem
-        let img = new Image();
-        img.src = "assets/" + questionNumber + "-" + dummyArray[i] + ".png";
-        img.onload = function() {
-            if (img.naturalHeight <= 70) {
+        let answerImg = new Image();
+        answerImg.src = "assets/" + questionNumber + "-" + dummyArray[i] + ".png";
+        answerImg.onload = function() {
+            if (answerImg.naturalHeight <= 70) {
                 answers[i].firstChild.setAttribute("height", "50%");
             } else {
                 answers[i].firstChild.setAttribute("height", "80%");

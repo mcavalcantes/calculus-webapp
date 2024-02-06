@@ -5,12 +5,13 @@
         <title>Index</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="themes/light.css" id="theme">
-        <link rel="icon" href="assets/favicon-32x32.png">
     </head>
     <body onload="generate()">
         <script src="index.js"></script>
         <header>
-            <button class="header-button" id="user-button"></button>
+            <form action="loginregister.html">
+                <input class="header-button" id="user-button" type="submit" value="">
+            </form>
             <button class="header-button" id="light" onclick="setTheme(this.id)"></button>
             <button class="header-button" id="dark" onclick="setTheme(this.id)"></button>
             <button class="header-button" id="gold" onclick="setTheme(this.id)"></button>

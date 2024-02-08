@@ -1,26 +1,8 @@
-// The 'totalNumberOfQuestions' variable should be defined in a better way. Having a
-// method to count all the files in the 'assets' directory and dividing this number by 4
-// is a good idea (since there is four images per question). The variable is used for generating
-// the random number to pick the question. Example: if we have 40 files (images) in 'assets' directory, then
-// we have (40 / 4) = 10 question in total. So, the random number should be a integer in the [1, 10]
-// range, inclusively.
-
-// DO NOT FORGET THESE FUCKERS RIGHT HERE
 const totalNumberOfQuestions = 44;
 const reloadTime = 2000;
 let displayedQuestionNumber = 0;
 
-// FIXME:
-// - change the theme preview button to a .svg file in >that diagonal style
-// - try to find a way to properly size the images on the PROMPT container
-// - try to find a way to properly size the images (questions) on answer's div
-//         -> a good way of doing this is by setting a conditional statement where the main thing is
-//            the picture height. the point is that the questions normally are either "one-liners" or have
-//            some kind of fractions in it. so, when the image has a height less/equal to 70px, it probably
-//            is one of the "one-liner" type; otherwise, it is the fractions type (most of these have a > 80px 
-//            height). IMPORTANT: the images must be generated according to THESE settings:
-// --> png | Latin Modern | (12pt) Grande | 200 | Transparente | #unmarked | #unmarked <--
-// - try to find a way to set the 'totalNumberOfQuestions' variable value automatically
+// TEMPLATE: | png | Latin Modern | (12pt) Grande | 200 | Transparente | #unmarked | #unmarked |
 
 function generate() {
     let questionNumber = 0;
@@ -118,7 +100,7 @@ function blockUserClick() {
 }
 
 function setTheme(themeId) {
-    document.getElementById("theme").setAttribute("href", "themes/" + themeId + ".css");
+    document.getElementById("theme").setAttribute("href", "stylesheets/themes/" + themeId + ".css");
 }
 
 function styleCorrect(answerId) {

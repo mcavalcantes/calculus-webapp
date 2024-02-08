@@ -1,0 +1,52 @@
+body {
+    background-color: hsl(200, 20%, 5%);
+}
+
+div img {
+    filter: invert(100%);
+}
+
+#main-container {
+    background-color: hsl(200, 10%, 10%);
+    border: 0.25vh solid hsl(50, 100%, 20%);
+}
+
+#question-container {
+    background-color: hsl(200, 0%, 10%);
+    border: 0.25vh solid hsl(50, 100%, 50%);
+}
+
+#user-button {
+    filter: invert(100%);
+    background-color: hsl(0, 10%, 80%);
+}
+
+.answer {
+    background-color:hsl(200, 0%, 10%);
+    border: 0.25vh solid hsl(50, 100%, 20%);
+}
+
+.answer:hover {
+    border: 0.25vh solid hsl(50, 100%, 50%);
+    box-shadow: 0 0 2vh hsl(40, 100%, 50%);
+}
+
+.styleCorrect {
+    border: 0.25vh solid hsl(120, 100%, 50%);
+    box-shadow: 0 0 2vh 2px hsl(120, 100%, 50%);
+}
+
+.styleCorrect:hover {
+    border: 0.25vh solid hsl(120, 100%, 50%);
+    box-shadow: 0 0 2vh 2px hsl(120, 100%, 50%);
+}
+
+.styleIncorrect {
+    border: 0.25vh solid hsl(0, 100%, 50%);
+    box-shadow: 0 0 2vh 2px hsl(0, 100%, 50%);
+}
+
+.styleIncorrect:hover {
+    border: 0.25vh solid hsl(0, 100%, 50%);
+    box-shadow: 0 0 2vh 2px hsl(0, 100%, 50%);
+}

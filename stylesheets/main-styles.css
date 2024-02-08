@@ -9,15 +9,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
 }
 
 header {
     position: absolute;
     top: 0;
     display: flex;
-    align-items: center;
-    height: 8vh;
+    height: 10vh;
     width: 100vw;
+    align-items: center;
+    padding: 3vh;
+}
+
+img {
+    user-select: none;
+    pointer-events: none;
 }
 
 #main-container {
@@ -26,17 +33,17 @@ header {
     justify-content: space-between;
     height: 90vh;
     width: 60vw;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 1.5vh;
+    padding: 1.5vh;
 }
 
-#display {
+#question-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 40%;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 1.5vh;
 }
 
 #answer-container {
@@ -53,38 +60,27 @@ header {
     box-shadow: 0 0 0 1px hsl(0, 0%, 50%);
 }
 
-#light {
-    background-color: hsl(0, 0%, 90%);
-}
-
-#dark {
-    background-color: hsl(220, 10%, 20%);
-}
-
-#gold {
-    background-color: hsl(50, 100%, 50%);
-}
-
 #user-button {
-    background-image: url("assets/user-icon.svg");
+    background-image: url("../assets/user-icon.svg");
     background-size: 100%;
     border: none;
     border-radius: 4px;
+    height: 4vh;
 }
 
 .header-button {
     cursor: pointer;
-    height: 4vh;
+    height: 100%;
     width: 4vh;
-    margin-left: 2vh;
+    margin-right: 2vh;
 }
 
 .answer {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30%;
     width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
+    border-radius: 1.5vh;
 }

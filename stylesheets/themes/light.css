@@ -1,0 +1,47 @@
+body {
+    background-color: hsl(0, 0%, 80%);
+}
+
+#main-container {
+    background-color: hsl(0, 0%, 90%);
+    border: 0.25vh solid hsl(0, 0%, 70%);
+}
+
+#question-container {
+    background-color: hsl(0, 0%, 100%);
+    border: 0.25vh solid hsl(0, 0%, 80%);
+}
+
+#user-button {
+    background-color: hsl(0, 0%, 95%);
+}
+
+.answer {
+    background-color: hsl(0, 0%, 100%);
+    border: 0.25vh solid hsl(0, 0%, 80%);
+}
+
+.answer:hover {
+    border: 0.25vh solid hsl(0, 0%, 70%);
+    box-shadow: 0 0 2vh hsl(0, 0%, 50%);
+}
+
+.styleCorrect {
+    border: 0.25vh solid hsl(120, 100%, 50%);
+    box-shadow: 0 0 2vh 2px hsl(120, 100%, 50%);
+}
+
+.styleCorrect:hover {
+    border: 0.25vh solid hsl(120, 100%, 50%);
+    box-shadow: 0 0 2vh 2px hsl(120, 100%, 50%);
+}
+
+.styleIncorrect {
+    border: 0.25vh solid hsl(0, 100%, 50%);
+    box-shadow: 0 0 2vh 2px hsl(0, 100%, 50%);
+}
+
+.styleIncorrect:hover {
+    border: 0.25vh solid hsl(0, 100%, 50%);
+    box-shadow: 0 0 2vh 2px hsl(0, 100%, 50%);
+}

@@ -13,7 +13,22 @@ body {
 }
 
 #user-button {
+    border: 0.1vh solid hsl(0, 0%, 20%);
+    box-shadow: 0 0 0.5vh hsl(0, 0%, 0%);
     background-color: hsl(0, 0%, 95%);
+}
+
+#radio-container {
+    border: 2px solid hsl(0, 0%, 50%);
+}
+
+#next-button {
+    border: 0.2vh solid hsl(0, 0%, 60%);
+    background-color: hsl(0, 0%, 95%);
+}
+
+.sidebar-container label {
+    color: hsl(0, 0%, 0%);
 }
 
 .answer {
@@ -23,25 +38,25 @@ body {
 
 .answer:hover {
     border: 0.25vh solid hsl(0, 0%, 70%);
-    box-shadow: 0 0 2vh hsl(0, 0%, 50%);
+    box-shadow: 0 0 1vh hsl(0, 0%, 50%);
 }
 
 .styleCorrect {
     border: 0.25vh solid hsl(120, 100%, 50%);
-    box-shadow: 0 0 2vh 2px hsl(120, 100%, 50%);
+    box-shadow: 0 0 1vh 2px hsl(120, 100%, 50%);
 }
 
 .styleCorrect:hover {
     border: 0.25vh solid hsl(120, 100%, 50%);
-    box-shadow: 0 0 2vh 2px hsl(120, 100%, 50%);
+    box-shadow: 0 0 1vh 2px hsl(120, 100%, 50%);
 }
 
 .styleIncorrect {
     border: 0.25vh solid hsl(0, 100%, 50%);
-    box-shadow: 0 0 2vh 2px hsl(0, 100%, 50%);
+    box-shadow: 0 0 1vh 2px hsl(0, 100%, 50%);
 }
 
 .styleIncorrect:hover {
     border: 0.25vh solid hsl(0, 100%, 50%);
-    box-shadow: 0 0 2vh 2px hsl(0, 100%, 50%);
+    box-shadow: 0 0 1vh 2px hsl(0, 100%, 50%);
 }

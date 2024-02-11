@@ -6,47 +6,71 @@ div img {
     filter: invert(100%);
 }
 
+fieldset legend {
+    color: hsl(0, 0%, 90%);
+}
+
 #main-container {
-    background-color: hsl(200, 10%, 10%);
+    background-color: hsl(200, 20%, 10%);
     border: 0.25vh solid hsl(50, 100%, 20%);
 }
 
 #question-container {
-    background-color: hsl(200, 0%, 10%);
+    background-color: hsl(200, 10%, 10%);
     border: 0.25vh solid hsl(50, 100%, 50%);
 }
 
 #user-button {
     filter: invert(100%);
+    border: 0.1vh solid hsl(220, 100%, 50%);
+    box-shadow: 0 0 0.5vh hsl(220, 100%, 20%);
     background-color: hsl(0, 10%, 80%);
 }
 
+#autoskip-checkbox {
+    accent-color: hsl(50, 100%, 50%);
+}
+
+#radio-container {
+    border: 2px solid hsl(50, 50%, 50%);
+}
+
+#next-button {
+    filter: invert(100%);
+    border: 0.2vh solid hsl(230, 100%, 50%);
+    background-color: hsl(22, 14%, 85%);
+}
+
+.sidebar-container label {
+    color: hsl(0, 0%, 90%);
+}
+
 .answer {
-    background-color:hsl(200, 0%, 10%);
+    background-color:hsl(200, 5%, 10%);
     border: 0.25vh solid hsl(50, 100%, 20%);
 }
 
 .answer:hover {
     border: 0.25vh solid hsl(50, 100%, 50%);
-    box-shadow: 0 0 2vh hsl(40, 100%, 50%);
+    box-shadow: 0 0 1vh hsl(40, 100%, 50%);
 }
 
 .styleCorrect {
     border: 0.25vh solid hsl(120, 100%, 50%);
-    box-shadow: 0 0 2vh 2px hsl(120, 100%, 50%);
+    box-shadow: 0 0 1vh 2px hsl(120, 100%, 50%);
 }
 
 .styleCorrect:hover {
     border: 0.25vh solid hsl(120, 100%, 50%);
-    box-shadow: 0 0 2vh 2px hsl(120, 100%, 50%);
+    box-shadow: 0 0 1vh 2px hsl(120, 100%, 50%);
 }
 
 .styleIncorrect {
     border: 0.25vh solid hsl(0, 100%, 50%);
-    box-shadow: 0 0 2vh 2px hsl(0, 100%, 50%);
+    box-shadow: 0 0 1vh 2px hsl(0, 100%, 50%);
 }
 
 .styleIncorrect:hover {
     border: 0.25vh solid hsl(0, 100%, 50%);
-    box-shadow: 0 0 2vh 2px hsl(0, 100%, 50%);
+    box-shadow: 0 0 1vh 2px hsl(0, 100%, 50%);
 }

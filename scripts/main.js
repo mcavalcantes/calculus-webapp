@@ -1,93 +1,115 @@
 const totalNumberOfQuestions = 44;
-const reloadTime = 2000;
-let displayedQuestionNumber = 0;
+let reloadTime = 2000;
+let questionNumber = 0;
 
-// TEMPLATE: | png | Latin Modern | (12pt) Grande | 200 | Transparente | #unmarked | #unmarked |
-
+/* Generates and then displays a new question and answers */
 function generate() {
-    let questionNumber = 0;
-    do {
-        questionNumber = getRandomPositiveInteger(totalNumberOfQuestions);
-    } while (questionNumber === displayedQuestionNumber);
+    let newQuestionNumber = getRandomPositiveInteger(totalNumberOfQuestions);
+    while (newQuestionNumber === questionNumber) {
+        newQuestionNumber = getRandomPositiveInteger(totalNumberOfQuestions);
+    }
 
-    displayedQuestionNumber = questionNumber;
-    document.getElementById("question").setAttribute("src", "assets/" + questionNumber + ".png");
+    questionNumber = newQuestionNumber;
+    let questionImage = new Image();
+    questionImage.src = "assets/" + questionNumber + ".png";
 
-    // the implementation below is probably not the most appropriate one, but I don't know a better one atm
-    // this makes the website responsible by setting specific display widths based on a image natural width;
-    let questionImg = new Image();
-    questionImg.src = "assets/" + questionNumber + ".png";
-
-    questionImg.onload = function() {
-        let w = questionImg.naturalWidth;
-        let questionImgElement = document.getElementById("question");
-
+    let widthAttribute;
+    questionImage.onload = function() {
+        let w = questionImage.naturalWidth;
         if (w <= 200) {
-            questionImgElement.setAttribute("width", "30%");
+            widthAttribute = "20%";
         } else if (w <= 300) {
-            questionImgElement.setAttribute("width", "40%");
+            widthAttribute = "30%";
         } else if (w <= 400) {
-            questionImgElement.setAttribute("width", "50%");
+            widthAttribute = "40%";
         } else if (w <= 500) {
-            questionImgElement.setAttribute("width", "60%");
+            widthAttribute = "50%";
         } else {
-            questionImgElement.setAttribute("width", "70%");
+            widthAttribute = "60%";
         }
     }
 
-    let dummyArray = getShuffledArray();
+    const answerOrderArray = getRandomArray();
     const answers = document.getElementById("answer-container").children;
 
     for (let i = 0; i < 3; i++) {
-        answers[i].firstChild.setAttribute("src", "assets/" + questionNumber + "-" + dummyArray[i] + ".png");
-        if (dummyArray[i] === 3) {
-            answers[i].setAttribute("class", "answer correct");
-        } else {
-            answers[i].setAttribute("class", "answer incorrect");
-        }
-
-        // thank god stackoverflow exists, fixed the sizing problem
-        let answerImg = new Image();
-        answerImg.src = "assets/" + questionNumber + "-" + dummyArray[i] + ".png";
-        answerImg.onload = function() {
-            if (answerImg.naturalHeight <= 70) {
-                answers[i].firstChild.setAttribute("height", "50%");
+        let answerImage = new Image();
+        answerImage.src = "assets/" + questionNumber + "-" + answerOrderArray[i] + ".png";
+        answerImage.onload = function() {
+            if (answerImage.naturalHeight <= 70) {
+                answers[i].firstChild.style.height = "50%";
             } else {
-                answers[i].firstChild.setAttribute("height", "80%");
+                answers[i].firstChild.style.height = "80%";
             }
         }
+    
+        if (answerOrderArray[i] === 3) {
+            answers[i].className = "answer correct";
+        } else {
+            answers[i].className = "answer incorrect";
+        }
+
+        answers[i].firstChild.src = answerImage.src;
     }
+
+    document.getElementById("question").src = questionImage.src;
 }
 
-function getShuffledArray() {
+/* Clear the correct/incorrect visual feedback */
+function clearAnswerFeedback() {
+    document.getElementById("a").className = "answer";
+    document.getElementById("b").className = "answer";
+    document.getElementById("c").className = "answer";
+}
+
+/* Shuffles the [1, 2, 3] array and returns it */
+function getRandomArray() {
     const array = [];
-    array[0] = getRandomPositiveInteger(3);
+    array.push(getRandomPositiveInteger(3));
 
     let i = 1;
     while (i < 3) {
         let temp = getRandomPositiveInteger(3);
         if (!array.includes(temp)) {
-            array[i] = temp;
-            i += 1;
+            array.push(temp);
+            i++;
         }
     }
 
     return array;
 }
 
+/* Verifies if the selected answers is correct or incorrect and then displays a visual feedback */
 function checkAnswer(divClass, answerId) {
-    blockUserClick();
-
     if (divClass === "answer correct") {
         styleCorrect(answerId);
     } else if (divClass === "answer incorrect") {
         styleIncorrect(answerId);
     }
 
-    setTimeout(generate, reloadTime);
+    let isAutoskipEnabled = document.getElementById("autoskip-checkbox").checked;
+
+    if (isAutoskipEnabled) {
+        blockUserClick(reloadTime);
+        setTimeout(clearAnswerFeedback, reloadTime);
+        setTimeout(generate, reloadTime);
+    } else {
+        showNextButton();
+    }
 }
 
-function blockUserClick() {
+/* Shows a button in UI to advance only if the auto-skip is disabled */
+function showNextButton() {
+    document.getElementById("next-button").style.visibility = "visible";
+}
+
+/* Hides the shown button after user clicks it */
+function hideNextButton() {
+    document.getElementById("next-button").style.visibility = "hidden";
+}
+
+/* Blocks the user click on answers only if auto-skip is enabled */
+function blockUserClick(timeInterval) {
     const answers = document.getElementsByClassName("answer");
     for (let i = 0; i < 3; i++) {
         answers[i].setAttribute("onclick", null);
@@ -95,28 +117,41 @@ function blockUserClick() {
 
     setTimeout(() => {
         for (let i = 0; i < 3; i++)
-        answers[i].setAttribute("onclick", "checkAnswer(this.className, this.id)");
-    }, reloadTime);
+            answers[i].setAttribute("onclick", "checkAnswer(this.className, this.id)");
+    }, timeInterval);
 }
 
-function setTheme(themeId) {
-    document.getElementById("theme").setAttribute("href", "stylesheets/themes/" + themeId + ".css");
+/* Displays the reload time selection whenever the auto-skip checkbox is checked */
+function toggleRadioVisibility() {
+    let radioContainer = document.getElementById("radio-container");
+    if (document.getElementById("autoskip-checkbox").checked) {
+        radioContainer.style.visibility = "visible";
+    } else {
+        radioContainer.style.visibility = "hidden";
+    }
 }
 
+/* Sets the main page theme */
+function setTheme(themeName) {
+    document.getElementById("theme").setAttribute("href", "stylesheets/themes/" + themeName + ".css");
+}
+
+/* Sets the reload time for the auto-skip feature */ 
+function setReloadTime(newReloadTime) {
+    reloadTime = newReloadTime;
+}
+
+/* Shows visual feedback for a correct answer */
 function styleCorrect(answerId) {
     document.getElementById(answerId).className = "answer styleCorrect";
-    setTimeout(() => {
-        document.getElementById(answerId).className = "answer";      
-    }, reloadTime);
 }
 
+/* Shows visual feedback for a incorrect answer */
 function styleIncorrect(answerId) {
     document.getElementById(answerId).className = "answer styleIncorrect";
-    setTimeout(() => {
-        document.getElementById(answerId).className = "answer";      
-    }, reloadTime);
 }
 
-function getRandomPositiveInteger(inclusiveUpperLimit) {
-    return 1 + Math.floor(Math.random() * inclusiveUpperLimit);
+/* Returns a pseudo-random positive integer in the interval [1, upper] */
+function getRandomPositiveInteger(upper) {
+    return 1 + Math.floor(Math.random() * upper);
 }

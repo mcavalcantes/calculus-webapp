@@ -9,18 +9,48 @@
     </head>
     <body onload="generate()">
         <script src="scripts/main.js"></script>
-        <header>
-            <form action="login-register.html">
-                <input class="header-button" id="user-button" type="submit" value="">
-            </form>
-            <button class="header-button" id="light" style="background-color: hsl(0, 0%, 90%);" onclick="setTheme(this.id)"></button>
-            <button class="header-button" id="dark"  style="background-color: hsl(220, 10%, 20%);" onclick="setTheme(this.id)"></button>
-            <button class="header-button" id="gold"  style="background-color: hsl(50, 100%, 50%);" onclick="setTheme(this.id)"></button>
+        <header class="main-header">
+            <a class="header-button" id="user-button" href="login-register.html"></a>
+            <button class="header-button" id="light" style="background-color: hsl(0, 0%, 90%);" onclick="setTheme(this.id)">
+                <div class="tooltip-container"><div class="tooltip-text">Tema Claro</div></div>
+            </button>
+            <button class="header-button" id="dark"  style="background-color: hsl(220, 10%, 20%);" onclick="setTheme(this.id)">
+                <div class="tooltip-container"><div class="tooltip-text">Tema Escuro</div></div>
+            </button>
+            <button class="header-button" id="gold"  style="background-color: hsl(50, 100%, 50%);" onclick="setTheme(this.id)">
+                <div class="tooltip-container"><div class="tooltip-text">Tema Dourado</div></div>
+            </button>
         </header>
+        <div class="sidebar-container">
+            <div id="checkbox-container">
+                <input id="autoskip-checkbox" type="checkbox" onclick="toggleRadioVisibility()" checked>
+                <label>Avançar automaticamente</label>
+            </div>
+            <fieldset id="radio-container" style="visibility: visible;">
+                <legend>Intervalo do avanço</legend>
+                <div>
+                    <input class="interval-radio" type="radio" name="interval" onclick="setReloadTime(500)">
+                    <label>0,5 segundo</label>
+                </div>
+                <div>
+                    <input class="interval-radio" type="radio" name="interval" onclick="setReloadTime(1000)">
+                    <label>1 segundo</label>
+                </div>
+                <div>
+                    <input class="interval-radio" type="radio" name="interval" onclick="setReloadTime(2000)" checked>
+                    <label>2 segundos</label>
+                </div>
+                <div>
+                    <input class="interval-radio" type="radio" name="interval" onclick="setReloadTime(4000)">
+                    <label>4 segundos</label>
+                </div>
+            </fieldset>
+        </div>
         <div id="main-container">
             <div id="question-container">
                 <img id="question" src="">
             </div>
+            <button id="next-button" onclick="hideNextButton(); clearAnswerFeedback(); generate()"></button>
             <div id="answer-container">
                 <div class="answer" id="a" onclick="checkAnswer(this.className, this.id)"><img src=""></div>
                 <div class="answer" id="b" onclick="checkAnswer(this.className, this.id)"><img src=""></div>

@@ -11,7 +11,7 @@ function generate() {
 
     questionNumber = newQuestionNumber;
     let questionImage = new Image();
-    questionImage.src = "assets/" + questionNumber + ".png";
+    questionImage.src = "assets/questions/" + questionNumber + ".png";
 
     let widthAttribute;
     questionImage.onload = function() {
@@ -34,7 +34,7 @@ function generate() {
 
     for (let i = 0; i < 3; i++) {
         let answerImage = new Image();
-        answerImage.src = "assets/" + questionNumber + "-" + answerOrderArray[i] + ".png";
+        answerImage.src = "assets/questions/" + questionNumber + "-" + answerOrderArray[i] + ".png";
         answerImage.onload = function() {
             if (answerImage.naturalHeight <= 70) {
                 answers[i].firstChild.style.height = "50%";

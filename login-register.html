@@ -7,18 +7,21 @@
         <link rel="stylesheet" href="stylesheets/login-register-styles.css">
     </head>
     <body>
+        <script src="scripts/login-register.js"></script>
         <div id="main-container">
             <p id="upper-text">Login & Registro</p>
-            <form id="inputs-container">
-                <p class="form-title" style="margin-bottom: 6px">Nome de usuário</p>
-                <input id="username-field" type="text" maxlength="32">
-                <p class="form-title" style="margin-bottom: 6px">Senha</p>
-                <input id="password-field" style="font-family: monospace, sans-serif;" type="password" maxlength="32">
+            <form method="post" id="inputs-container">
+                <label for="username-field" style="margin-bottom: 6px;">Nome de usuário</label>
+                <input id="username-field" title="Nome de usuário" name="username" type="text" minlength="4" maxlength="32" onkeydown="checkInputLength(this.id)" autocomplete="off" required>
+                <p class="input-subtitle" id="username-subtitle">Pelo menos 4 caracteres</p>
+                <label for="password-field" style="margin-bottom: 6px;">Senha</label>
+                <input id="password-field" title="Senha" style="font-family: monospace, sans-serif;" name="password" type="password" minlength="8" maxlength="32" onkeydown="checkInputLength(this.id)" required>
+                <p class="input-subtitle" id="password-subtitle">Pelo menos 8 caracteres</p>
+                <div id="buttons-container">
+                    <input class="submit-button" type="submit" value="Registrar">
+                    <input class="submit-button" type="submit" value="Login">
+                </div>
             </form>
-            <div id="buttons-container">
-                <input class="submit-button" type="submit" value="Registrar">
-                <input class="submit-button" type="submit" value="Login">
-            </div>
         </div>
     </body>
 </html>

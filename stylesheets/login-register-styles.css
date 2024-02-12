@@ -10,14 +10,14 @@ body {
     align-items: center;
     height: 100vh;
     background-image: linear-gradient(
-        rgb(0, 0, 0, 0.5), rgb(255, 255, 255, 0.1), rgb(0, 0, 0, 0.5)), url("../assets/calculus-background.jpg");
+        rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url("../assets/login-register-background.jpg");
     background-size: 100%;
     background-position-y: center;
 }
 
 form input {
+    display: block;
     padding: 0 10px;
-    margin-bottom: 20px;
     height: 32px;
     width: 80%;
     font-family: Montserrat, Arial, sans-serif;
@@ -27,34 +27,43 @@ form input {
     border-radius: 4px;
 }
 
+form label {
+    display: block;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
 #main-container {
-    height: 50vh;
-    width: 30vw;
+    height: 350px;
+    width: 460px;
     padding: 8px;
     background-color: hsl(0, 0%, 90%);
     border: 2px solid hsl(0, 0%, 40%);
     border-radius: 8px;
-    box-shadow: 0 0 20px 4px hsl(0, 0%, 0%);
+    box-shadow: 0 0 20px 10px hsl(0, 0%, 0%);
 }
 
 #upper-text {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30%;
+    height: 25%;
     font-family: Montserrat, Arial, sans-serif;
     font-size: 36px;
 }
 
 #inputs-container {
-    height: 60%;
+    height: 70%;
     padding: 10px;
 }
 
 #buttons-container {
     display: flex;
     justify-content: space-between;
-    height: 10%;
+    height: 20%;
+    margin-top: 20px;
+    align-self: flex-end;
 }
 
 .form-title {
@@ -63,8 +72,16 @@ form input {
     font-weight: 500;
 }
 
+.input-subtitle {
+    color: hsl(0, 0%, 20%);
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
 .submit-button {
-    height: 100%;
+    height: 80%;
     width: 48%;
     background-color: hsl(0, 0%, 95%);
     font-family: Montserrat, Arial, sans-serif;

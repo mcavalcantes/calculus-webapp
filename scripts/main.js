@@ -149,6 +149,8 @@ function styleCorrect(answerId) {
 /* Shows visual feedback for a incorrect answer */
 function styleIncorrect(answerId) {
     document.getElementById(answerId).className = "answer styleIncorrect";
+    if (document.getElementById("autoskip-checkbox").checked)
+        styleCorrect(document.getElementsByClassName("answer correct")[0].id);
 }
 
 /* Returns a pseudo-random positive integer in the interval [1, upper] */

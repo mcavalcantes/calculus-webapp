@@ -19,7 +19,7 @@ body {
 }
 
 #radio-container {
-    border: 2px solid hsl(0, 0%, 50%);
+    border: 0.3vh solid hsl(0, 0%, 50%);
 }
 
 #next-button {

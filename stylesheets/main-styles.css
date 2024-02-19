@@ -60,8 +60,8 @@ img {
 
 #light, #dark, #gold {
     border-radius: 100%;
-    border: 1px solid hsl(0, 0%, 100%);
-    box-shadow: 0 0 0 1px hsl(0, 0%, 50%);
+    border: 0.3vh solid hsl(0, 0%, 100%);
+    box-shadow: 0 0 0 0.1vh hsl(0, 0%, 20%);
 }
 
 #user-button {
@@ -81,8 +81,9 @@ img {
 }
 
 #autoskip-checkbox {
-    transform: scale(1.5);
-    margin-right: 10px;
+    height: 2.8vh;
+    width: 2.8vh;
+    margin-right: 1.4vh;
 }
 
 #radio-container {
@@ -92,26 +93,34 @@ img {
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
-    height: 25%;
     padding: 2vh;
 }
 
 .interval-radio {
-    transform: scale(1.2);
-    margin-right: 1vh;
+    height: 2.2vh;
+    width: 2.2vh;
+    margin-right: 1vh
+}
+
+.radio-option-container {
+    margin-bottom: 2.2vh;
+}
+
+.radio-option-container:last-of-type {
+    margin-bottom: 0;
 }
 
 .sidebar-container legend {
     font-family: Montserrat, Arial, sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 2.6vh;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 1.5vh;
 }
 
 .sidebar-container label {
     font-family: Montserrat, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 2.3vh;
     font-weight: 500;
 }
 

@@ -10,7 +10,7 @@
     <body onload="generate()">
         <script src="scripts/main.js"></script>
         <header class="main-header">
-            <a class="header-button" id="user-button" href="login-register.html"></a>
+            <a style="visibility: hidden;" class="header-button" id="user-button" href="login-register.html"></a>
             <button class="header-button" id="light" style="background-color: hsl(0, 0%, 90%);" onclick="setTheme(this.id)">
                 <div class="tooltip-container"><div class="tooltip-text">Tema Claro</div></div>
             </button>
@@ -28,19 +28,19 @@
             </div>
             <fieldset id="radio-container" style="visibility: visible;">
                 <legend>Intervalo do avanço</legend>
-                <div>
+                <div class="radio-option-container">
                     <input class="interval-radio" type="radio" name="interval" onclick="setReloadTime(500)">
                     <label>0,5 segundo</label>
                 </div>
-                <div>
+                <div class="radio-option-container">
                     <input class="interval-radio" type="radio" name="interval" onclick="setReloadTime(1000)">
                     <label>1 segundo</label>
                 </div>
-                <div>
+                <div class="radio-option-container">
                     <input class="interval-radio" type="radio" name="interval" onclick="setReloadTime(2000)" checked>
                     <label>2 segundos</label>
                 </div>
-                <div>
+                <div class="radio-option-container">
                     <input class="interval-radio" type="radio" name="interval" onclick="setReloadTime(4000)">
                     <label>4 segundos</label>
                 </div>

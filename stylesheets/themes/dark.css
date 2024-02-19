@@ -28,7 +28,7 @@ fieldset legend {
 }
 
 #radio-container {
-    border: 2px solid hsl(0, 0%, 80%);
+    border: 0.3vh solid hsl(0, 0%, 80%);
 }
 
 #next-button {

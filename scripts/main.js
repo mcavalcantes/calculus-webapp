@@ -13,20 +13,16 @@ function generate() {
     let questionImage = new Image();
     questionImage.src = "assets/questions/" + questionNumber + ".png";
 
-    let widthAttribute;
     questionImage.onload = function() {
-        let w = questionImage.naturalWidth;
-        if (w <= 200) {
-            widthAttribute = "20%";
-        } else if (w <= 300) {
-            widthAttribute = "30%";
-        } else if (w <= 400) {
-            widthAttribute = "40%";
-        } else if (w <= 500) {
-            widthAttribute = "50%";
+        let questionHeightAttribute;
+
+        if (questionImage.naturalHeight <= 70) {
+            questionHeightAttribute = "20%";
         } else {
-            widthAttribute = "60%";
+            questionHeightAttribute = "35%";
         }
+
+        document.getElementById("question").style.height = questionHeightAttribute;
     }
 
     const answerOrderArray = getRandomArray();

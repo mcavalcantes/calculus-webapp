@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: Montserrat;
-    src: url("/../assets/fonts/Montserrat.ttf");
-}
-
 /* The background image should be changed. Otherwise, embed this:
 Image by <a href="https://www.freepik.com/free-vector/hand-drawn-scientific-formulas-chalkboard_7465599.htm#query
 =math%20blackboard&position=15&from_view=keyword&track=ais&uuid=b03ea598-1a5e-4b31-a833-4ac4d7f4fc5b">Freepik</a>
@@ -30,7 +25,7 @@ form input {
     padding: 0 10px;
     height: 32px;
     width: 80%;
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: Montserrat, Arial, Verdana, sans-serif;
     font-size: 16px;
     font-weight: 500;
     border: 2px solid hsl(0, 0%, 40%);
@@ -39,7 +34,7 @@ form input {
 
 form label {
     display: block;
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: Montserrat, Arial, Verdana, sans-serif;
     font-size: 20px;
     font-weight: 500;
 }
@@ -59,7 +54,7 @@ form label {
     align-items: center;
     justify-content: center;
     height: 25%;
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: Montserrat, Arial, Verdana, sans-serif;
     font-size: 36px;
 }
 
@@ -77,14 +72,14 @@ form label {
 }
 
 .form-title {
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: Montserrat, Arial, Verdana, sans-serif;
     font-size: 20px;
     font-weight: 500;
 }
 
 .input-subtitle {
     color: hsl(0, 0%, 20%);
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: Montserrat, Arial, Verdana, sans-serif;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 18px;
@@ -94,7 +89,7 @@ form label {
     height: 80%;
     width: 48%;
     background-color: hsl(0, 0%, 95%);
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: Montserrat, Arial, Verdana, sans-serif;
     font-weight: 600;
     border: 2px solid hsl(0, 0%, 50%);
     border-radius: 4px;

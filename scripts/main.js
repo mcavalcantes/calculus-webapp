@@ -1,4 +1,4 @@
-const totalNumberOfQuestions = 44;
+const totalNumberOfQuestions = 72;
 let reloadTime = 2000;
 let questionNumber = 0;
 
